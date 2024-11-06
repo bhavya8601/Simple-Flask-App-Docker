@@ -89,7 +89,7 @@ def delete_product(id):
     return jsonify({'error': 'Product not found'}), 404 # return an error if the product is not found
 
 if __name__ == '__main__': # if the script is executed directly, the code block is executed, if the script is imported, the code block is not executed.
-    app.run(host='0.0.0.0', port='5070', debug = True) #specify the url and port, and debug = True allows for the server to automatically reload when changes are made to the code
+    app.run(host='0.0.0.0', port=5070, debug = True) #specify the url and port, and debug = True allows for the server to automatically reload when changes are made to the code
     
 # on terminal enter = 'export FLASK_APP=0-hello_route.py' to set the file to be run as the flask app
 # on terminal enter = 'flask run' to run the flask app
