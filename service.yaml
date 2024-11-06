@@ -1,0 +1,14 @@
+sudo: unable to resolve host msis.kubenode1.com: Name or service not known
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-flask-app-service
+spec:
+  selector:
+    app: simple-flask-app
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 5070       # Port exposed by the service
+      targetPort: 5070 # Port on the container
+      nodePort: 30007
