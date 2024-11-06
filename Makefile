@@ -3,6 +3,13 @@ APP_NAME = simple-flask-app
 PORT = 5070
 NODE_PORT = 30007
 
+install:
+	pip install -r requirements.txt
+
+# Run the Flask app
+run:
+	python product_list_app.py
+
 # Docker build and push
 docker-build:
 	docker build -t $(APP_NAME) .
@@ -30,6 +37,8 @@ docker-setup-run: docker-build docker-run
 # Help
 help:
 	@echo "Usage:"
+	@echo "  make install          Install Python dependencies"
+	@echo "  make run              Run the Flask app"
 	@echo "  make docker-build      Build the Docker image"
 	@echo "  make docker-run        Run the Docker container on port 5070"
 	@echo "  make k8s-deploy        Deploy the app to Kubernetes"
